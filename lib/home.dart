@@ -18,23 +18,16 @@ class HomeScreen extends StatelessWidget {
             title: Text('Islami', style: Theme.of(context).textTheme.headline1),
           ),
           bottomNavigationBar: BottomNavigationBar(
+            backgroundColor: Color.fromRGBO(183, 147, 95, 1.0),
             items: [
+
               BottomNavigationBarItem(
-                icon: ImageIcon(AssetImage('assets/images/icon_radio.png'),
-                  size: 48,),
-                label: 'radio',
+                icon: Image.asset('assets/images/quran.png', color: Colors.black,),
+                label: 'Quran'
               ),
               BottomNavigationBarItem(
-                icon: Image.asset('assets/images/background.png'),
-                label: '',
-              ),
-              BottomNavigationBarItem(
-                icon: Image.asset('assets/images/icon_sebha.png'),
-                label: '',
-              ),
-              BottomNavigationBarItem(
-                icon: Image.asset('assets/images/radio.png'),
-                label: '',
+                  icon: Image.asset('assets/images/quran.png', color: Colors.black,),
+                  label: 'Quran'
               ),
             ],
           ),
