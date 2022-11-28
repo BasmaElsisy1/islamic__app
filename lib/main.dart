@@ -12,6 +12,7 @@ class MyApplication extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+
       debugShowCheckedModeBanner: false,
       initialRoute: HomeScreen.routeName,
       routes: {HomeScreen.routeName: (context) => HomeScreen()},
@@ -24,11 +25,13 @@ class MyApplication extends StatelessWidget {
         GlobalWidgetsLocalizations.delegate,
         GlobalCupertinoLocalizations.delegate,
       ],
+
       locale: Locale('ar'),
       supportedLocales: [
         Locale('en'), // English, no country code
         Locale('ar'), // Spanish, no country code
       ],
+
     );
   }
 }

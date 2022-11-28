@@ -3,5 +3,8 @@
   "quran": "Quran",
   "ahadeth" : "Ahadeth",
   "sebha": "Sebha",
-  "radio" : "Radio"
+  "radio" : "Radio",
+  "sura_name" : "Sura Name",
+  "sebha_body" : "The number of praises",
+  "radio_body" : "Quran Radio"
 }
