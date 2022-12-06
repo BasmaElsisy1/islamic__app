@@ -27,35 +27,39 @@ class _HomeScreenState extends State<HomeScreen> {
         Scaffold(
           appBar: AppBar(
             centerTitle: true,
-            title: Text(AppLocalizations.of(context)!.islami, style: Theme.of(context).textTheme.headline1),
+            title: Text(AppLocalizations.of(context)!.islami,
+                style: Theme.of(context).textTheme.headline1),
           ),
           bottomNavigationBar: BottomNavigationBar(
-            type: BottomNavigationBarType.fixed,
             currentIndex: current_index,
-            onTap: (index){
+            onTap: (index) {
               current_index = index;
-              setState(() {
-
-              });
+              setState(() {});
             },
             items: [
               BottomNavigationBarItem(
-                icon: ImageIcon(AssetImage('assets/images/radio.png')),
-                label: AppLocalizations.of(context)!.radio,
-                backgroundColor: Color.fromRGBO(183, 147, 95, 1.0),
-              ),
-              BottomNavigationBarItem(
-                  icon: ImageIcon(AssetImage('assets/images/sebha.png')),
-                  label: AppLocalizations.of(context)!.sebha,
+                  icon: ImageIcon(
+                    AssetImage('assets/images/quran.png'),
+                    size: 40,
+                  ),
+                  label: AppLocalizations.of(context)!.quran,
                   backgroundColor: Color.fromRGBO(183, 147, 95, 1.0)),
               BottomNavigationBarItem(
-                  icon: ImageIcon(AssetImage('assets/images/ahadeth.png')),
+                  icon: ImageIcon(AssetImage('assets/images/ahadeth.png'),
+                      size: 40),
                   label: AppLocalizations.of(context)!.ahadeth,
                   backgroundColor: Color.fromRGBO(183, 147, 95, 1.0)),
               BottomNavigationBarItem(
-                  icon: ImageIcon(AssetImage('assets/images/quran.png')),
-                  label: AppLocalizations.of(context)!.quran,
+                  icon: ImageIcon(AssetImage('assets/images/sebha.png'),
+                      size: 40),
+                  label: AppLocalizations.of(context)!.sebha,
                   backgroundColor: Color.fromRGBO(183, 147, 95, 1.0)),
+              BottomNavigationBarItem(
+                icon:
+                    ImageIcon(AssetImage('assets/images/radio.png'), size: 40),
+                label: AppLocalizations.of(context)!.radio,
+                backgroundColor: Color.fromRGBO(183, 147, 95, 1.0),
+              ),
             ],
           ),
           body: screen[current_index],
@@ -63,10 +67,11 @@ class _HomeScreenState extends State<HomeScreen> {
       ],
     );
   }
+
   List<Widget> screen = [
-    RadioScreen(),
-    SebhaScreen(),
+    QuranScreen(),
     AhadethScreen(),
-    QuranScreen()
+    SebhaScreen(),
+    RadioScreen(),
   ];
 }
