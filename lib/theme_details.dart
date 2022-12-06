@@ -22,6 +22,7 @@ class ThemeDetails {
         onSurface: Colors.transparent,
       ),
       appBarTheme: AppBarTheme(
+        iconTheme: IconThemeData(color: Colors.black),
           backgroundColor: Colors.transparent,
           elevation: 0.0,
           titleTextStyle: TextStyle(

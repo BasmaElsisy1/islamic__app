@@ -38,19 +38,25 @@ class _HomeScreenState extends State<HomeScreen> {
             },
             items: [
               BottomNavigationBarItem(
-                  icon: ImageIcon(AssetImage('assets/images/quran.png') , size: 40,),
+                  icon: ImageIcon(
+                    AssetImage('assets/images/quran.png'),
+                    size: 40,
+                  ),
                   label: AppLocalizations.of(context)!.quran,
                   backgroundColor: Color.fromRGBO(183, 147, 95, 1.0)),
               BottomNavigationBarItem(
-                  icon: ImageIcon(AssetImage('assets/images/ahadeth.png'), size: 40),
+                  icon: ImageIcon(AssetImage('assets/images/ahadeth.png'),
+                      size: 40),
                   label: AppLocalizations.of(context)!.ahadeth,
                   backgroundColor: Color.fromRGBO(183, 147, 95, 1.0)),
               BottomNavigationBarItem(
-                  icon: ImageIcon(AssetImage('assets/images/sebha.png'), size: 40),
+                  icon: ImageIcon(AssetImage('assets/images/sebha.png'),
+                      size: 40),
                   label: AppLocalizations.of(context)!.sebha,
                   backgroundColor: Color.fromRGBO(183, 147, 95, 1.0)),
               BottomNavigationBarItem(
-                icon: ImageIcon(AssetImage('assets/images/radio.png'), size: 40),
+                icon:
+                    ImageIcon(AssetImage('assets/images/radio.png'), size: 40),
                 label: AppLocalizations.of(context)!.radio,
                 backgroundColor: Color.fromRGBO(183, 147, 95, 1.0),
               ),
@@ -67,8 +73,5 @@ class _HomeScreenState extends State<HomeScreen> {
     AhadethScreen(),
     SebhaScreen(),
     RadioScreen(),
-
-
-
   ];
 }

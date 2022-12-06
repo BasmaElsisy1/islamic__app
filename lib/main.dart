@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:islamic/home/tabs/quran/sura_details_screen.dart';
 import 'package:islamic/theme_details.dart';
 import 'home.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
@@ -12,10 +13,12 @@ class MyApplication extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-
       debugShowCheckedModeBanner: false,
       initialRoute: HomeScreen.routeName,
-      routes: {HomeScreen.routeName: (context) => HomeScreen()},
+      routes: {
+        HomeScreen.routeName: (context) => HomeScreen(),
+        SuraDetailsScreen.routeName: (context) => SuraDetailsScreen()
+      },
       theme: ThemeDetails.lightTheme,
       darkTheme: ThemeDetails.darkTheme,
       themeMode: ThemeMode.light,
@@ -25,13 +28,11 @@ class MyApplication extends StatelessWidget {
         GlobalWidgetsLocalizations.delegate,
         GlobalCupertinoLocalizations.delegate,
       ],
-
       locale: Locale('ar'),
       supportedLocales: [
         Locale('en'), // English, no country code
         Locale('ar'), // Spanish, no country code
       ],
-
     );
   }
 }
