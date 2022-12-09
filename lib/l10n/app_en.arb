@@ -6,5 +6,12 @@
   "radio" : "Radio",
   "sura_name" : "Sura Name",
   "sebha_body" : "The number of praises",
-  "radio_body" : "Quran Radio"
+  "radio_body" : "Quran Radio",
+  "settings": "Settings",
+  "language": "Language",
+  "theme_mode" : "Apperence",
+  "english" : "English",
+  "arabic" : "Arabic",
+  "dark": "Dark",
+  "light" : "Light"
 }

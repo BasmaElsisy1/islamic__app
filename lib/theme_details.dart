@@ -12,7 +12,7 @@ class ThemeDetails {
         primary: blackColor,
         onPrimary: Colors.white,
         secondary: GoldColor,
-        onSecondary: Colors.brown,
+        onSecondary: GoldColor,
         brightness: Brightness.light,
         error: Colors.red,
         onError: Colors.red,
@@ -21,25 +21,25 @@ class ThemeDetails {
         surface: Colors.transparent,
         onSurface: Colors.transparent,
       ),
-      appBarTheme: AppBarTheme(
-        iconTheme: IconThemeData(color: Colors.black),
+      appBarTheme: const AppBarTheme(
+          iconTheme: IconThemeData(color: Colors.black),
           backgroundColor: Colors.transparent,
           elevation: 0.0,
           titleTextStyle: TextStyle(
               fontSize: 30, color: blackColor, fontWeight: FontWeight.bold)),
-      textTheme: TextTheme(
+      textTheme: const TextTheme(
           headline1: TextStyle(
               fontSize: 30, color: blackColor, fontWeight: FontWeight.bold)),
-      bottomNavigationBarTheme: BottomNavigationBarThemeData(
+      bottomNavigationBarTheme: const BottomNavigationBarThemeData(
           backgroundColor: GoldColor,
           selectedItemColor: blackColor,
           unselectedItemColor: Colors.white));
   static ThemeData darkTheme = ThemeData(
       scaffoldBackgroundColor: Colors.transparent,
       colorScheme: const ColorScheme(
-        primary: BlueColor,
+        primary: YellowColor,
         onPrimary: Colors.white,
-        secondary: Colors.white,
+        secondary: BlueColor,
         onSecondary: YellowColor,
         brightness: Brightness.dark,
         error: Colors.red,
@@ -49,15 +49,16 @@ class ThemeDetails {
         surface: Colors.transparent,
         onSurface: Colors.transparent,
       ),
-      appBarTheme: AppBarTheme(
+      appBarTheme: const AppBarTheme(
+          iconTheme: IconThemeData(color: Colors.white),
           backgroundColor: Colors.transparent,
           elevation: 0.0,
           titleTextStyle: TextStyle(
               fontSize: 30, color: Colors.white, fontWeight: FontWeight.bold)),
-      textTheme: TextTheme(
+      textTheme: const TextTheme(
           headline1: TextStyle(
               fontSize: 30, color: Colors.white, fontWeight: FontWeight.bold)),
-      bottomNavigationBarTheme: BottomNavigationBarThemeData(
+      bottomNavigationBarTheme: const BottomNavigationBarThemeData(
           backgroundColor: BlueColor,
           selectedItemColor: YellowColor,
           unselectedItemColor: Colors.white));
