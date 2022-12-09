@@ -6,6 +6,7 @@ class ThemeDetails {
   static const BlueColor = Color.fromRGBO(20, 26, 46, 1.0);
   static const YellowColor = Color.fromRGBO(250, 204, 29, 1.0);
 
+
   static ThemeData lightTheme = ThemeData(
       scaffoldBackgroundColor: Colors.transparent,
       colorScheme: const ColorScheme(
@@ -21,6 +22,7 @@ class ThemeDetails {
         surface: Colors.transparent,
         onSurface: Colors.transparent,
       ),
+
       appBarTheme: const AppBarTheme(
           iconTheme: IconThemeData(color: Colors.black),
           backgroundColor: Colors.transparent,
