@@ -128,7 +128,7 @@ class QuranScreen extends StatelessWidget {
             margin: EdgeInsets.only(bottom: 10),
             child: Image.asset('assets/images/quran_upper_image.png')),
         Divider(
-          color: ThemeDetails.GoldColor,
+          color: Theme.of(context).colorScheme.onSecondary,
           height: 15,
           thickness: 2,
         ),
@@ -137,21 +137,17 @@ class QuranScreen extends StatelessWidget {
           style: TextStyle(fontSize: 25),
         ),
         Divider(
-          color: ThemeDetails.GoldColor,
+          color: Theme.of(context).colorScheme.onSecondary,
           height: 15,
           thickness: 2,
         ),
         Expanded(
-          child: ListView.separated(
+          child: ListView.builder(
             itemCount: suraName.length,
             itemBuilder: (_, index) {
-              return SuraNameItem('${suraName[index]}' , index);
-            },
-            separatorBuilder: (BuildContext context, int index) {
-              return Divider(
-                color: ThemeDetails.GoldColor,
-                height: 15, indent: 30, endIndent: 30,
-              );
+              return Container(
+                  margin: EdgeInsets.only(bottom: 15, top: 15),
+                  child: SuraNameItem('${suraName[index]}', index));
             },
           ),
         )

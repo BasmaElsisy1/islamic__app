@@ -1,9 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:islamic/providers/myProvider.dart';
+import 'package:provider/provider.dart';
 
 class RadioScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    var pro = Provider.of<MyProvider>(context);
+
     return Column(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
@@ -19,7 +23,10 @@ class RadioScreen extends StatelessWidget {
           ),
         ),
         Image.asset(
-          'assets/images/buttons.png',
+          pro.themeMode == ThemeMode.light
+              ?  'assets/images/buttons.png'
+              :  'assets/images/buttons_dark.png',
+
         ),
 
       ],

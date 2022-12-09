@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:islamic/theme_details.dart';
+import 'package:provider/provider.dart';
+import '../../../providers/myProvider.dart';
 
 class SuraDetailsScreen extends StatefulWidget {
   static const String routeName = 'SuraDetailsScreen';
@@ -16,6 +18,7 @@ class _SuraDetailsScreenState extends State<SuraDetailsScreen> {
   @override
   Widget build(BuildContext context) {
     var args = ModalRoute.of(context)?.settings.arguments as SuraDetailsArg;
+    var provider = Provider.of<MyProvider>(context);
     if (versess.isEmpty) {
       loadFile(args.index);
     }
@@ -23,7 +26,7 @@ class _SuraDetailsScreenState extends State<SuraDetailsScreen> {
     return Stack(
       children: [
         Image.asset(
-          'assets/images/background.png',
+          provider.getBackground(),
           width: double.infinity,
           fit: BoxFit.fill,
         ),
@@ -36,7 +39,9 @@ class _SuraDetailsScreenState extends State<SuraDetailsScreen> {
           body: Container(
             padding: EdgeInsets.symmetric(vertical: 40, horizontal: 10),
             decoration: BoxDecoration(
-                color: Color.fromRGBO(248, 248, 248, 0.803921568627451),
+                color: provider.themeMode == ThemeMode.light
+                    ? Color.fromRGBO(248, 248, 248, 0.803921568627451)
+                    : Color.fromRGBO(20, 26, 46, 1.0),
                 borderRadius: BorderRadius.circular(25)),
             margin: EdgeInsets.only(left: 29, right: 29, bottom: 100, top: 20),
             child: Column(
@@ -49,18 +54,21 @@ class _SuraDetailsScreenState extends State<SuraDetailsScreen> {
                       margin: EdgeInsets.only(left: 27),
                       padding: EdgeInsets.all(2),
                       decoration: BoxDecoration(
-                          color: Colors.black,
+                          color: Theme.of(context).colorScheme.primary,
                           borderRadius: BorderRadius.circular(50)),
                       child: Icon(
                         Icons.play_arrow,
-                        color: Colors.white,
+                        color: provider.themeMode == ThemeMode.light
+                            ? Colors.white
+                            : Colors.black,
                       ),
                     ),
                     Container(
                       alignment: Alignment.center,
                       child: Text(
                         "سورة ${args.name} ",
-                        style: Theme.of(context).textTheme.headline1,
+                        style: Theme.of(context).textTheme.headline1?.copyWith(
+                            color: Theme.of(context).colorScheme.primary),
                         textAlign: TextAlign.center,
                       ),
                     ),
@@ -83,7 +91,12 @@ class _SuraDetailsScreenState extends State<SuraDetailsScreen> {
                             itemBuilder: (c, index) {
                               return Text(
                                 '${versess[index]}(${index + 1})',
-                                style: TextStyle(fontSize: 20, height: 2 ,),
+                                style: TextStyle(
+                                    fontSize: 20,
+                                    height: 2,
+                                    fontWeight: FontWeight.w100,
+                                    color:
+                                        Theme.of(context).colorScheme.primary),
                                 textAlign: TextAlign.center,
                               );
                             }),
@@ -109,6 +122,5 @@ class _SuraDetailsScreenState extends State<SuraDetailsScreen> {
 class SuraDetailsArg {
   String name;
   int index;
-
   SuraDetailsArg(this.name, this.index);
 }
